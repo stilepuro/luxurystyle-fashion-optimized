@@ -1,0 +1,823 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.7;
+    color: #1a1a1a;
+    background-color: #F5F1ED;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* Typography */
+h1, h2, h3 {
+    font-family: 'Cormorant Garamond', serif;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: #1a1a1a;
+}
+
+h1 {
+    font-size: 88px;
+    font-weight: 500;
+    line-height: 1.1;
+}
+
+h2 {
+    font-size: 48px;
+    font-weight: 600;
+    margin-bottom: 48px;
+}
+
+h3 {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 16px;
+}
+
+h4 {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 8px;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 16px;
+}
+
+.small {
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #6B6B6B;
+}
+
+/* Header */
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(245, 241, 237, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    border-bottom: 1px solid #EAE4DE;
+}
+
+.navbar {
+    padding: 16px 0;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.logo h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 600;
+    color: #AE956B;
+    text-decoration: none;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 48px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #1a1a1a;
+    font-weight: 500;
+    font-size: 16px;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-link:hover {
+    color: #AE956B;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: #AE956B;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #1a1a1a;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+/* Hero Section */
+.hero {
+    height: 70vh;
+    min-height: 600px;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+                url('images/elegant-teal-off-shoulder-gown-model-rock-wall-fashion-hero-image.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(174, 149, 107, 0.1) 0%, transparent 50%);
+    animation: kenBurns 15s ease-in-out infinite alternate;
+}
+
+@keyframes kenBurns {
+    0% { transform: scale(1) translateX(0) translateY(0); }
+    100% { transform: scale(1.05) translateX(10px) translateY(-10px); }
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    animation: fadeInUp 1s ease-out;
+}
+
+.hero-title {
+    font-size: 88px;
+    font-weight: 500;
+    line-height: 1.1;
+    margin-bottom: 24px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero-subtitle {
+    font-size: 22px;
+    font-style: italic;
+    margin-bottom: 32px;
+    color: rgba(255,255,255,0.9);
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 16px 32px;
+    background: #AE956B;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: all 0.4s ease;
+    border-radius: 4px;
+}
+
+.cta-button:hover {
+    background: transparent;
+    color: #AE956B;
+    border: 1px solid #AE956B;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Section Styles */
+.section-title {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 18px;
+    color: #6B6B6B;
+    margin-bottom: 64px;
+}
+
+/* Featured Section */
+.featured-section {
+    padding: 96px 0;
+}
+
+.featured-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 48px;
+}
+
+.featured-card {
+    background: white;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: transform 0.4s ease;
+}
+
+.featured-card:hover {
+    transform: translateY(-8px);
+}
+
+.featured-card .card-image {
+    height: 300px;
+    overflow: hidden;
+}
+
+.featured-card .card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.featured-card:hover .card-image img {
+    transform: scale(1.03);
+}
+
+.card-content {
+    padding: 24px;
+}
+
+.category {
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #AE956B;
+}
+
+.date {
+    font-size: 14px;
+    color: #6B6B6B;
+    margin-top: 8px;
+}
+
+/* Fashion Section */
+.fashion-section {
+    padding: 96px 0;
+    background: white;
+}
+
+.articles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 48px;
+}
+
+.article-card {
+    background: #F5F1ED;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: transform 0.4s ease;
+}
+
+.article-card:hover {
+    transform: translateY(-8px);
+}
+
+.article-image {
+    height: 250px;
+    overflow: hidden;
+}
+
+.article-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.article-card:hover .article-image img {
+    transform: scale(1.03);
+}
+
+.article-content {
+    padding: 24px;
+}
+
+.excerpt {
+    color: #6B6B6B;
+    font-size: 16px;
+    margin-bottom: 16px;
+}
+
+/* Beauty Section */
+.beauty-section {
+    padding: 96px 0;
+}
+
+.beauty-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 48px;
+}
+
+.featured-beauty .beauty-image {
+    height: 400px;
+}
+
+.featured-beauty .beauty-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.beauty-card {
+    background: white;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 24px;
+    transition: transform 0.4s ease;
+}
+
+.beauty-card:hover {
+    transform: translateY(-8px);
+}
+
+.beauty-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.beauty-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.beauty-card:hover .beauty-image img {
+    transform: scale(1.03);
+}
+
+.beauty-content {
+    padding: 20px;
+}
+
+/* Shopping Section */
+.shopping-section {
+    padding: 96px 0;
+    background: white;
+}
+
+.top-5 {
+    margin-bottom: 64px;
+}
+
+.top-5 h3 {
+    text-align: center;
+    margin-bottom: 48px;
+    color: #AE956B;
+}
+
+.top-5-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+}
+
+.top-item {
+    display: flex;
+    align-items: center;
+    padding: 24px;
+    background: #F5F1ED;
+    border-radius: 4px;
+    transition: transform 0.3s ease;
+}
+
+.top-item:hover {
+    transform: translateY(-4px);
+}
+
+.rank {
+    font-size: 32px;
+    font-weight: 600;
+    color: #AE956B;
+    margin-right: 16px;
+    min-width: 50px;
+}
+
+.item-info h4 {
+    font-size: 18px;
+    margin-bottom: 4px;
+}
+
+.item-info p {
+    font-size: 14px;
+    color: #6B6B6B;
+    margin: 0;
+}
+
+.shopping-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 48px;
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+.gallery-overlay h4 {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.gallery-overlay p {
+    font-size: 18px;
+    color: #AE956B;
+    margin: 0;
+}
+
+/* Lifestyle Section */
+.lifestyle-section {
+    padding: 96px 0;
+}
+
+.lifestyle-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 48px;
+}
+
+.lifestyle-card {
+    background: white;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: transform 0.4s ease;
+}
+
+.lifestyle-card:hover {
+    transform: translateY(-8px);
+}
+
+.lifestyle-image {
+    height: 300px;
+    overflow: hidden;
+}
+
+.lifestyle-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.lifestyle-card:hover .lifestyle-image img {
+    transform: scale(1.03);
+}
+
+.lifestyle-content {
+    padding: 24px;
+}
+
+/* Instagram Section */
+.instagram-section {
+    padding: 96px 0;
+    background: white;
+}
+
+.instagram-feed {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+    margin-bottom: 48px;
+}
+
+.instagram-item {
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.instagram-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.instagram-item:hover img {
+    transform: scale(1.05);
+}
+
+.follow-btn {
+    display: block;
+    margin: 0 auto;
+    padding: 16px 48px;
+    background: #AE956B;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: all 0.4s ease;
+    border-radius: 4px;
+    text-align: center;
+    width: fit-content;
+}
+
+.follow-btn:hover {
+    background: transparent;
+    color: #AE956B;
+    border: 1px solid #AE956B;
+}
+
+/* Footer */
+.footer {
+    background: #1a1a1a;
+    color: white;
+    padding: 64px 0 24px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 48px;
+    margin-bottom: 48px;
+}
+
+.footer-section h3 {
+    font-size: 18px;
+    margin-bottom: 24px;
+    color: #AE956B;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 12px;
+}
+
+.footer-section ul li a {
+    color: #cccccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #AE956B;
+}
+
+.social-links {
+    display: flex;
+    gap: 16px;
+}
+
+.social-links a {
+    color: #cccccc;
+    text-decoration: none;
+    padding: 8px;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #AE956B;
+}
+
+.footer-bottom {
+    border-top: 1px solid #333;
+    padding-top: 24px;
+    text-align: center;
+    color: #999;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .hero-title {
+        font-size: 72px;
+    }
+    
+    h2 {
+        font-size: 40px;
+    }
+    
+    .beauty-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .featured-beauty {
+        order: 1;
+    }
+    
+    .beauty-sidebar {
+        order: 2;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background-color: rgba(245, 241, 237, 0.98);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        backdrop-filter: blur(10px);
+        border-top: 1px solid #EAE4DE;
+        padding: 24px 0;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .hero-title {
+        font-size: 48px;
+    }
+
+    .hero-subtitle {
+        font-size: 20px;
+    }
+
+    h2 {
+        font-size: 32px;
+    }
+
+    h3 {
+        font-size: 24px;
+    }
+
+    .container {
+        padding: 0 16px;
+    }
+
+    .featured-grid,
+    .articles-grid,
+    .shopping-gallery,
+    .lifestyle-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .top-5-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .instagram-feed {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 36px;
+    }
+
+    .hero-subtitle {
+        font-size: 18px;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    .instagram-feed {
+        grid-template-columns: 1fr;
+    }
+
+    .cta-button,
+    .follow-btn {
+        padding: 12px 24px;
+        font-size: 14px;
+    }
+}
+
+/* Smooth scrolling for navigation */
+.nav-link[href^="#"] {
+    scroll-behavior: smooth;
+}
+
+/* Loading animation */
+@keyframes shimmer {
+    0% {
+        background-position: -200px 0;
+    }
+    100% {
+        background-position: calc(200px + 100%) 0;
+    }
+}
+
+.loading {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200px 100%;
+    animation: shimmer 1.5s infinite;
+}
